@@ -4,7 +4,7 @@ This repo provides a Vagrantfile to simply test and to evaluate [EMBA](https://g
 (based on https://github.com/botlabsDev/FACTbox )
 
 ## System requirements
-Please keep in mind that FACT requires a lot of system resources. Therefore, the Vagrant VM will be build
+Please keep in mind that EMBA requires a lot of system resources. Therefore, the Vagrant VM will be build
 with the following specs:
 
   * vb.cpus = 4
