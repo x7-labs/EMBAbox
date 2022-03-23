@@ -21,3 +21,12 @@ with the following specs:
   $ vagrant up
   ```
 
+## Running
+
+Vagrant will mount the current directory onto /vagrant hence the following flow can be applied
+
+```
+ $ vagrant ssh
+ $ cd emba
+ $ ./emba.sh -l /vagrant/log -f /vagrant/firmware.bin
+```
