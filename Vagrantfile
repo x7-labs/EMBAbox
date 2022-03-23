@@ -8,6 +8,8 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "EMBAbox"
   config.disksize.size = "100GB"
   config.vm.boot_timeout = 500
+  # port forward for embark
+  config.vm.network "forwarded_port", guest: 80, host: 80
 
   config.ssh.keep_alive = true
   config.ssh.insert_key = true
@@ -23,4 +25,5 @@ Vagrant.configure("2") do |config|
   #config.vm.provision "shell", path: "install-docker.sh"
   #config.vm.provision "shell", path: "install-mogodb.sh"
   config.vm.provision "shell", path: "install-emba.sh"
+  config.vm.provision "shell", path: "install-embark.sh"
 end
