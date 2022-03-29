@@ -21,7 +21,7 @@ with the following specs:
   $ vagrant up
   ```
 
-## Running
+## Running emba
 
 Vagrant will mount the current directory onto /vagrant hence the following flow can be applied
 
@@ -30,3 +30,17 @@ Vagrant will mount the current directory onto /vagrant hence the following flow 
  $ cd emba
  $ ./emba.sh -l /vagrant/log -f /vagrant/firmware.bin
 ```
+
+## Running embark
+
+The virtual machine exposes port 8888 (internally port 80) to the host
+```
+ $ vagrant ssh
+ $ cd embark
+ $ sudo ./run_server.sh
+```
+
+Open a browser on http://localhost:8888/
+
+
+
