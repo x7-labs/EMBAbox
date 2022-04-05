@@ -32,11 +32,11 @@ Vagrant.configure("2") do |config|
 	s.inline = <<-SHELL
 		mkdir -p /root/.cargo
 		# Dummy cargo env created
-		echo DUMMU=true > /root/.cargo/env
+		echo DUMMY=true > /root/.cargo/env
 	SHELL
   end
   #config.vm.provision "shell", path: "install-docker.sh"
   #config.vm.provision "shell", path: "install-mogodb.sh"
-  config.vm.provision "shell", path: "install-emba.sh"
-#  config.vm.provision "shell", path: "install-embark.sh"
+  config.vm.provision "shell", path: "install-emba.sh" , name: "install_emba"
+  config.vm.provision "shell", path: "install-embark.sh", name: "install_embark"
 end
