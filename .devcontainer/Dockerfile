@@ -11,7 +11,7 @@ ENV TZ="Europe/Amsterdam"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 
-RUN apt-get update && apt-get -y install kali-linux-headless  && apt-cache clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y install kali-linux-headless  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ## account creation (Following) 
 # https://code.visualstudio.com/docs/remote/containers-advanced#_adding-a-nonroot-user-to-your-dev-container
