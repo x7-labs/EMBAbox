@@ -1,0 +1,6 @@
+{
+	"dockerFile": "Dockerfile",
+	"context": "..",
+	"settings": {
+		"terminal.integrated.shell.linux": null
+},
