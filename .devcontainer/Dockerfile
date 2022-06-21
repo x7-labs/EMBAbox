@@ -32,8 +32,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
 ### 
 # EMBA
 ####
-# Why gitpod?
-RUN rm -rf /usr/local/bin/docker-compose
+RUN apt-get update && apt-get -y install docker-compose  && apt-get clean && rm -rf /var/lib/apt/lists/*
+#RUN rm -rf /usr/local/bin/docker-compose
 
 #RUN apt-get update && apt-get -y install docker-compose  && apt-get clean && rm -rf /var/lib/apt/lists/*
 # ********************************************************
