@@ -29,6 +29,13 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
+### 
+# EMBA
+####
+# Why gitpod?
+RUN rm -rf /usr/local/bin/docker-compose
+
+#RUN apt-get update && apt-get -y install docker-compose  && apt-get clean && rm -rf /var/lib/apt/lists/*
 # ********************************************************
 # * Anything else you want to do like clean up goes here *
 # ********************************************************
