@@ -9,12 +9,16 @@ apt-get install -y \
     curl \
     gnupg \
     lsb-release
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+OF=/usr/share/keyrings/docker-archive-keyring.gpg
+if [ ! -f "$OF" ]
+then
+	echo "Downloading missing $OF"
+	curl -fsSL  https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o "$OF"
+fi
 
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+  bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
 gpasswd -a vagrant docker
